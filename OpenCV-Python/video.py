@@ -1,11 +1,9 @@
 import numpy as np
 import cv2
-import time
 
-cap = cv2.VideoCapture(1)
-#time.sleep(2)
+cap = cv2.VideoCapture(1) # Argument 1 - read the image from a USB Camera
 
-while(True):
+while(True):#Alternatively while(cap.isOpened()) can be used to check the working of camera
     # Capture frame-by-frame
     ret, frame = cap.read()
 
@@ -15,9 +13,14 @@ while(True):
     # Display the resulting frame
     cv2.imshow('grayscale',gray)
     cv2.imshow('color',frame)
+    # Waiting for the keyboard key 'q' to quit the image windows
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
 # When everything done, release the capture
 cap.release()
 cv2.destroyAllWindows()
+
+#Problem encountered :
+# error: "(-215) size.width>0 && size.height>0 in function imshow" shown up
+# because of the connection problem of camera with USB
