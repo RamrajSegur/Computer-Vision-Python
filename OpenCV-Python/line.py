@@ -1,4 +1,4 @@
-#Program to print a line on an image using opencv tools
+#Program to print a line on an image using opencv tools in python
 import numpy as np
 import cv2
 # Create a grayscale image or color background of desired intensity
